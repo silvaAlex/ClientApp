@@ -1,6 +1,5 @@
 namespace ClientApp.Domain.Commands.Contracts
 {
-    public interface ICommandResult
-    {
-    }
+    public interface ICommandResult { }
+
 }

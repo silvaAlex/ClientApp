@@ -16,12 +16,18 @@ namespace ClientApp.Domain.Entities
             Name = name;
             CPF = cpf;
             Email = email;
+            Active = true;
         }
 
         public void UpdateName(Name name)
         {
             AddNotifications(name.Notifications);
             Name = name;
+        }
+
+        public void UpdateActive(bool active)
+        {
+            Active = active;
         }
     }
 }

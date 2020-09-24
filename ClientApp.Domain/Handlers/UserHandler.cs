@@ -21,7 +21,7 @@ namespace ClientApp.Domain.Handlers
         {
             if (_repository.CPFExists(command.CPF))
             {
-                AddNotification("Document", "Este CPF já está em uso!");
+                AddNotification("CPF", "Este CPF já está em uso!");
                 return null;
             }
 
@@ -31,15 +31,10 @@ namespace ClientApp.Domain.Handlers
 
             User user = new User(name, cpf, email);
 
-            AddNotifications(name.Notifications);
-            AddNotifications(cpf.Notifications);
-            AddNotifications(email.Notifications);
-
             command.Validate();
 
             if (command.Invalid)
                 return new CommandResult(false, "Erro ao criar o usuario", command.Notifications);
-
 
             _repository.Create(user);
 
